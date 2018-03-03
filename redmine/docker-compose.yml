@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  redmine:
+    restart: always
+    image: redmine
+    volumes:
+    - ../redmine/sqlite:/usr/src/redmine/sqlite
+    - ../redmine/log:/usr/src/redmine/log 
+    - ../redmine/file:/usr/src/redmine/files
+    ports:
+      - 8080:3000
+    environment:
+    - TZ=Asia/Tokyo
+    
+
+
